@@ -52,7 +52,7 @@ const deleteGoals = asyncHandler(async (req, res)=> {
         throw new Error("Nothing to delete!");
     }
 
-    const deletedGoal = await Goal.findByIdAndDelete(req.params.id);
+    await Goal.findByIdAndDelete(req.params.id);
 
     res.status(200).json({id: req.params.id});
 })
